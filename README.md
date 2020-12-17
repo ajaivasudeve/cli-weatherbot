@@ -1,0 +1,1 @@
+This is a simple C++ program for fetching weather information from Openweathermap.
