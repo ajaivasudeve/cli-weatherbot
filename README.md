@@ -1,0 +1,1 @@
+This is a simple C++ program based on Openweathermap, GeoJS, Here APIs.
