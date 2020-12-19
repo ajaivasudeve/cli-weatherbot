@@ -294,7 +294,6 @@ int fetch_weather_info_place()
     CURL *curl;
     FILE *fp;
     long result;
-    int selection;
     string name;
     string url;
 
