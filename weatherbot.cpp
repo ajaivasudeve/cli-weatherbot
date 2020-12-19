@@ -97,7 +97,7 @@ int parse_weather_json()
         cout << "Visibility               : " << json_object_get_int(visibility) << " m" << endl;
     cout << "Wind Speed               : " << json_object_get_int(speed) << speed_unit << endl;
     cout << "Wind Direction           : " << json_object_get_int(deg) << "°" << endl;
-    cout << "\nPress Any Key to Return";
+    cout << "\nPress 'Enter' Key to Return: ";
 
     getchar();
 
@@ -435,7 +435,7 @@ int main()
     if (api_key == "0")
     {
         cout << "\033[0;37;41mError: API Key Not Found!\033[0m\n";
-        cout << "\nPress Any Key to Exit: ";
+        cout << "\nPress 'Enter' Key to Exit: ";
         getchar();
         return 0;
     }
