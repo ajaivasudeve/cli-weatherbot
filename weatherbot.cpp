@@ -15,10 +15,10 @@ using namespace std;
 #define WEATHER_FILE "weather.json"
 #define API_KEY_FILE "key.txt"
 
-static string api_key = "0";
-static string unit_string = "standard";
-static string temp_unit = " K";
-static string speed_unit = " m/s";
+static std::string api_key = "0";
+static std::string unit_string = "standard";
+static std::string temp_unit = " K";
+static std::string speed_unit = " m/s";
 
 void splash()
 {
