@@ -300,7 +300,7 @@ enter_name:
     cout << "\nEnter Location Name: ";
     getline(cin, name);
 
-    name[0] = tolower(name[0]);
+    transform(name.begin(), name.end(), name.begin(), ::tolower);
 
     if (name == "exit")
         return 0;
