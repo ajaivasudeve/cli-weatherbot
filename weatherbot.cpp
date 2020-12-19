@@ -281,7 +281,7 @@ init_entry:
     cin >> input;
     cin.clear();
     cin.ignore();
-        
+
     transform(input.begin(), input.end(), input.begin(), ::toupper);
 
     country_code = input.substr(0, 2);
@@ -348,11 +348,11 @@ int fetch_weather_info_pin()
     splash();
 weather_menu:
     cout << "\033[0;30;47mCountry in Scope: " << country_code << "\033[0m\n"
-            "\t1. Continue\n"
-            "\t2. Change Country in Scope\n"
-            "\t3. Go Back\n"
-            "\n"
-            "Your Selection: ";
+                                                                 "\t1. Continue\n"
+                                                                 "\t2. Change Country in Scope\n"
+                                                                 "\t3. Go Back\n"
+                                                                 "\n"
+                                                                 "Your Selection: ";
     cin >> selection;
     cin.clear();
     cin.ignore();
@@ -384,7 +384,8 @@ enter_pin:
 
     transform(pin.begin(), pin.end(), pin.begin(), ::tolower);
 
-    if (pin == "exit") {
+    if (pin == "exit")
+    {
         splash();
         goto weather_menu;
     }
