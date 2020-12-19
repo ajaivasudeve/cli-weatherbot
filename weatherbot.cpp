@@ -173,14 +173,17 @@ unit_menu:
 string get_country_code()
 {
     string country_code;
+    string input;
     char country_init, conv_country_init;
 
     splash();
 init_entry:
     cout << "Enter the first letter of your Country name: ";
-    cin >> country_init;
+    cin >> input;
     cin.clear();
     cin.ignore();
+
+    country_init = input[0];
 
     splash();
     conv_country_init = toupper(country_init);
