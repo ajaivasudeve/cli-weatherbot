@@ -322,6 +322,8 @@ enter_name:
     fclose(fp);
     curl_easy_cleanup(curl);
 
+    splash();
+
     if (result == CURLE_OK)
     {
         parse_weather_json();
@@ -331,7 +333,6 @@ enter_name:
         cout << "\033[0;37;41mError: Failed to fetch weather info!\033[0m\n";
         cout << "\n";
     }
-    splash();
     goto enter_name;
 }
 
@@ -375,8 +376,8 @@ weather_menu:
         break;
     }
 
-enter_pin:
     splash();
+enter_pin:
     cout << "\033[0;30;47mType 'EXIT' Return to Previous Menu\033[0m\n";
     cout << "\nEnter postal index code of the location: ";
     getline(cin, pin);
@@ -402,13 +403,14 @@ enter_pin:
     fclose(fp);
     curl_easy_cleanup(curl);
 
+    splash();
+
     if (result == CURLE_OK)
     {
         parse_weather_json();
     }
     else
     {
-        splash();
         cout << "\033[0;37;41mError: Failed to fetch weather info!\033[0m\n";
         cout << "\n";
     }
