@@ -299,7 +299,7 @@ int fetch_weather_info_place()
 
     splash();
 enter_name:
-    cout << "\033[0;30;47mType 'EXIT' to Go Back\033[0m\n";
+    cout << "\033[0;30;47mType 'EXIT' Return to Main Menu\033[0m\n";
     cout << "\nEnter Location Name: ";
     getline(cin, name);
 
@@ -325,17 +325,14 @@ enter_name:
     if (result == CURLE_OK)
     {
         parse_weather_json();
-        return 0;
     }
     else
     {
-        splash();
         cout << "\033[0;37;41mError: Failed to fetch weather info!\033[0m\n";
         cout << "\n";
-        goto enter_name;
     }
-
-    return 0;
+    splash();
+    goto enter_name;
 }
 
 int fetch_weather_info_pin()
@@ -380,9 +377,18 @@ weather_menu:
         break;
     }
 
+enter_pin:
     splash();
-    cout << "Enter postal index code of the location: ";
+    cout << "\033[0;30;47mType 'EXIT' Return to Previous Menu\033[0m\n";
+    cout << "\nEnter postal index code of the location: ";
     getline(cin, pin);
+
+    transform(pin.begin(), pin.end(), pin.begin(), ::tolower);
+
+    if (pin == "exit") {
+        splash();
+        goto weather_menu;
+    }
 
     url = "http://api.openweathermap.org/data/2.5/weather?zip=" + pin + "," + country_code + "&appid=" + api_key + "&units=" + unit_string;
 
@@ -401,17 +407,15 @@ weather_menu:
     if (result == CURLE_OK)
     {
         parse_weather_json();
-        return 0;
     }
     else
     {
         splash();
         cout << "\033[0;37;41mError: Failed to fetch weather info!\033[0m\n";
         cout << "\n";
-        goto weather_menu;
     }
 
-    return 0;
+    goto enter_pin;
 }
 
 void load_api_key()
