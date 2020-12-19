@@ -15,6 +15,7 @@ using namespace std;
 #define WEATHER_FILE "weather.json"
 #define API_KEY_FILE "key.txt"
 
+static std::string country_code = "IN";
 static std::string api_key = "0";
 static std::string unit_string = "standard";
 static std::string temp_unit = " K";
@@ -172,7 +173,6 @@ unit_menu:
 
 string get_country_code()
 {
-    string country_code;
     string input;
     char country_init, conv_country_init;
 
@@ -281,10 +281,10 @@ init_entry:
     cin >> input;
     cin.clear();
     cin.ignore();
+        
+    transform(input.begin(), input.end(), input.begin(), ::toupper);
 
     country_code = input.substr(0, 2);
-
-    transform(country_code.begin(), country_code.end(), country_code.begin(), ::toupper);
 
     return country_code;
 }
@@ -342,14 +342,13 @@ int fetch_weather_info_pin()
     long result;
     int selection;
     string pin;
-    string country_code;
     string url;
 
     splash();
 weather_menu:
-    cout << "\033[0;30;47mDefault Country: IN - India\033[0m\n"
+    cout << "\033[0;30;47mCountry in Scope: " << country_code << "\033[0m\n"
             "\t1. Continue\n"
-            "\t2. Change Country\n"
+            "\t2. Change Country in Scope\n"
             "\t3. Go Back\n"
             "\n"
             "Your Selection: ";
@@ -360,7 +359,6 @@ weather_menu:
     switch (selection)
     {
     case 1:
-        country_code = "IN";
         break;
     case 2:
         country_code = get_country_code();
