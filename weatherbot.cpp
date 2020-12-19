@@ -309,7 +309,7 @@ enter_name:
     if (name == "exit")
         return 0;
 
-    url += "http://api.openweathermap.org/data/2.5/weather?q=" + name + "&appid=" + api_key + "&units=" + unit_string;
+    url = "http://api.openweathermap.org/data/2.5/weather?q=" + name + "&appid=" + api_key + "&units=" + unit_string;
 
     curl = curl_easy_init();
     fp = fopen(WEATHER_FILE, "wb");
@@ -385,7 +385,7 @@ weather_menu:
     cout << "Enter postal index code of the location: ";
     getline(cin, pin);
 
-    url += "http://api.openweathermap.org/data/2.5/weather?zip=" + pin + "," + country_code + "&appid=" + api_key + "&units=" + unit_string;
+    url = "http://api.openweathermap.org/data/2.5/weather?zip=" + pin + "," + country_code + "&appid=" + api_key + "&units=" + unit_string;
 
     curl = curl_easy_init();
     fp = fopen(WEATHER_FILE, "wb");
