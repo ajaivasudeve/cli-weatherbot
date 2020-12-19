@@ -1,0 +1,1 @@
+g++ weatherbot.cpp -o weatherbot.o -lcurl -I/usr/include/json-c -L/usr/lib -ljson-c
