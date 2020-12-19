@@ -278,7 +278,11 @@ init_entry:
     }
 
     cout << "\nEnter Code corresponding to your Country: ";
-    getline(cin, country_code);
+    cin >> input;
+    cin.clear();
+    cin.ignore();
+
+    country_code = input.substr(0, 2);
 
     transform(country_code.begin(), country_code.end(), country_code.begin(), ::toupper);
 
