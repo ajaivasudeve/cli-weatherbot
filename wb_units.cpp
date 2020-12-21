@@ -15,9 +15,9 @@ void wb_set_unit_sys(void)
 
 unit_menu:
     cout << "\033[0;30;47mSelect a Unit System:\033[0m"
-            "\n\t1. Standard"
-            "\n\t2. Metric"
-            "\n\t3. Imperial"
+            "\n\t1. Standard [Temp: Kelvin, Speed: Metre/Second, Dist: Metre]"
+            "\n\t2. Metric   [Temp: Celcius, Speed: Metre/Second, Dist: Metre]"
+            "\n\t3. Imperial [Temp: Fahrenheit, Speed: Miles/Hour, Dist: Feet]"
             "\n\t4. Return to Main Menu"
             "\n\nSelect an Option: ";
     cin >> selection;
