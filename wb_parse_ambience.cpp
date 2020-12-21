@@ -57,18 +57,18 @@ void wb_parse_weather(void)
          << "Value\033[0m" << endl;
     cout << "Place                    : " << label << endl;
     cout << "Condition                : " << json_object_get_string(condition) << endl;
-    cout << "Current Temperature      : " << json_object_get_int(temp) << temp_unit << endl;
-    cout << "Feels Like               : " << json_object_get_int(feels_like) << temp_unit << endl;
-    cout << "Min Temp                 : " << json_object_get_int(temp_min) << temp_unit << endl;
-    cout << "Max Temp                 : " << json_object_get_int(temp_max) << temp_unit << endl;
-    cout << "Pressure                 : " << json_object_get_int(pressure) << " hPa" << endl;
-    cout << "Humidity                 : " << json_object_get_int(humidity) << "%" << endl;
+    cout << "Current Temperature      : " << json_object_get_string(temp) << temp_unit << endl;
+    cout << "Feels Like               : " << json_object_get_string(feels_like) << temp_unit << endl;
+    cout << "Min Temp                 : " << json_object_get_string(temp_min) << temp_unit << endl;
+    cout << "Max Temp                 : " << json_object_get_string(temp_max) << temp_unit << endl;
+    cout << "Pressure                 : " << json_object_get_string(pressure) << " hPa" << endl;
+    cout << "Humidity                 : " << json_object_get_string(humidity) << "%" << endl;
     if (unit_sys == "Imperial")
         cout << "Visibility               : " << json_object_get_int(visibility) * 3.28084 << " ft" << endl;
     else
-        cout << "Visibility               : " << json_object_get_int(visibility) << " m" << endl;
-    cout << "Wind Speed               : " << json_object_get_int(speed) << speed_unit << endl;
-    cout << "Wind Direction           : " << json_object_get_int(deg) << "°" << endl;
+        cout << "Visibility               : " << json_object_get_string(visibility) << " m" << endl;
+    cout << "Wind Speed               : " << json_object_get_string(speed) << speed_unit << endl;
+    cout << "Wind Direction           : " << json_object_get_string(deg) << "°" << endl;
     cout << "\nPress 'Enter' Key to Return: ";
     getchar();
     splash();
