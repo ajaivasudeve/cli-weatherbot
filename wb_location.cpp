@@ -127,6 +127,9 @@ enter_name:
 
 error:
     cout << "\033[0;37;41mError: Location Invalid!\033[0m\n";
+    cout << "\033[0;37;41m"
+         << "Set Location: \n"
+         << label << "  |  " << latitude << ", " << longitude << "\033[0m\n\n";
     goto enter_name;
 }
 
