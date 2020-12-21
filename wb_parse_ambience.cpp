@@ -11,7 +11,6 @@ void wb_parse_weather(void)
     FILE *fp;
 
     struct json_object *parsed_json;
-    struct json_object *name;
     struct json_object *weather;
     struct json_object *weather_desc;
     struct json_object *condition;

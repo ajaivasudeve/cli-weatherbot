@@ -9,7 +9,6 @@ int parse_location_data()
 {
     char buffer[2048];
     FILE *fp;
-    int length;
 
     struct json_object *obj_parsed_json;
     struct json_object *obj_response;
@@ -67,7 +66,6 @@ void get_location_data()
 {
     CURL *curl;
     FILE *fp;
-    int ch_count;
     long result;
     string location, url;
 
