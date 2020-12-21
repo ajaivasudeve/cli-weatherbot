@@ -53,6 +53,7 @@ main_menu:
         goto main_menu;
         break;
     }
-
+    
+    system("clear");
     return 0;
 }
