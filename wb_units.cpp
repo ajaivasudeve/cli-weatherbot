@@ -38,6 +38,7 @@ unit_menu:
     case 2:
         unit_sys = "Metric";
         temp_unit = "° C";
+        speed_unit = " m/s";
         splash();
         cout << "\033[0;37;42m"
              << "Unit System Set - " << unit_sys << "\033[0m\n\n";
@@ -46,6 +47,7 @@ unit_menu:
     case 3:
         unit_sys = "Imperial";
         temp_unit = "° F";
+        speed_unit = " MPH";
         splash();
         cout << "\033[0;37;42m"
              << "Unit System Set - " << unit_sys << "\033[0m\n\n";
