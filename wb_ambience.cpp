@@ -42,7 +42,7 @@ void wb_get_ambience(int mode)
         type = "air_pollution";
         break;
     case 3:
-        type = "uvi";
+        type = "onecall";
         break;
     default:
         break;

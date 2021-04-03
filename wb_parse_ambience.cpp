@@ -165,6 +165,7 @@ void wb_parse_uvi(void)
     float uvi;
 
     struct json_object *obj_parsed_json;
+    struct json_object *obj_current;
     struct json_object *obj_uvi;
 
     fp = fopen(DATA_FILE, "r");
@@ -172,7 +173,8 @@ void wb_parse_uvi(void)
     fclose(fp);
 
     obj_parsed_json = json_tokener_parse(buffer);
-    json_object_object_get_ex(obj_parsed_json, "value", &obj_uvi);
+    json_object_object_get_ex(obj_parsed_json, "current", &obj_current);
+    json_object_object_get_ex(obj_current, "uvi", &obj_uvi);
 
     uvi_str = json_object_get_string(obj_uvi);
     uvi = atof(uvi_str.c_str());
