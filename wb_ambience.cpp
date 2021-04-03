@@ -48,7 +48,7 @@ void wb_get_ambience(int mode)
         break;
     }
 
-    url = "http://api.openweathermap.org/data/2.5/" + type + "?lat=" + latitude + "&lon=" + longitude + "&appid=" + weather_api_key + "&units=" + unit_sys;
+    url = "http://api.openweathermap.org/data/2.5/" + type + "?lat=" + latitude + "&lon=" + longitude + "&appid=" + weather_api_key + "&units=" + unit_sys + "&exclude=minutely,hourly,daily,alerts";
 
     curl = curl_easy_init();
     fp = fopen(DATA_FILE, "w+");
