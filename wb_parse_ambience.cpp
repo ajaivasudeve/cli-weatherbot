@@ -148,7 +148,7 @@ void wb_parse_air_qual(void)
     cout << "Nitric Oxide [NO]        : " << json_object_get_string(obj_no) << " μg/m^3" << endl;
     cout << "Nitrogen Dioxide [NO2]   : " << json_object_get_string(obj_no2) << " μg/m^3" << endl;
     cout << "Ozone [O3]               : " << json_object_get_string(obj_o3) << " μg/m^3" << endl;
-    cout << "Sulphur Dioxide [SO3]    : " << json_object_get_string(obj_so2) << " μg/m^3" << endl;
+    cout << "Sulphur Dioxide [SO2]    : " << json_object_get_string(obj_so2) << " μg/m^3" << endl;
     cout << "Particulate Matter 2.5   : " << json_object_get_string(obj_pm2_5) << " μg/m^3" << endl;
     cout << "Particulate Matter 10    : " << json_object_get_string(obj_pm10) << " μg/m^3" << endl;
     cout << "Ammonia [NH3]            : " << json_object_get_string(obj_nh3) << " μg/m^3" << endl;
