@@ -1,8 +1,6 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
 #include <curl/curl.h>
 #include </usr/include/json-c/json.h>
 
